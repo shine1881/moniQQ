@@ -8,8 +8,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.text.InputFilter;
-import android.text.Spanned;
 
 public class BaseActivity extends AppCompatActivity{
     private ForceOfflineReceiver receiver;
@@ -18,7 +16,6 @@ public class BaseActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         ActivityCollector.addActivity(this);
     }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -27,7 +24,6 @@ public class BaseActivity extends AppCompatActivity{
         receiver=new ForceOfflineReceiver();
         registerReceiver(receiver,intentFilter);
     }
-
     @Override
     protected void onPause() {
         super.onPause();
